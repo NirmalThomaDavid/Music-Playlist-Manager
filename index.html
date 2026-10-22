@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0c10">
+  <title>SoundSpace | Music Playlist Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#"><span class="brand-mark">♫</span><span>sound<span class="accent">space</span></span></a>
+      <p class="nav-label">MENU</p>
+      <a class="nav-item active" href="#"><span>▦</span> Your Library</a>
+      <a class="nav-item" href="#playlist"><span>♫</span> Playlist</a>
+      <div class="sidebar-bottom">
+        <div class="mini-note"><span class="note-icon">♪</span><div><strong>Your music, your mood.</strong><small>Make every moment sound better.</small></div></div>
+        <p class="muted tiny">JAVA DATA STRUCTURES PROJECT</p>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="breadcrumbs">Library <span>/</span> <strong>My Playlist</strong></div>
+        <div class="profile"><span class="profile-dot">N</span><span>Nirmal</span></div>
+      </header>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="live-dot"></span> YOUR PERSONAL MUSIC HUB</p>
+          <h1>Every track has<br>a <span>place.</span></h1>
+          <p class="hero-desc">Collect the songs you love. Keep your favourites close and your next listen one click away.</p>
+          <a class="primary-btn" href="#playlist">Explore playlist <span>↘</span></a>
+        </div>
+        <div class="hero-art" aria-label="Abstract music artwork">
+          <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+          <div class="vinyl"><div class="vinyl-center">♫</div></div>
+          <div class="equalizer"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="art-tag">PRESS PLAY<br><b>REPEAT.</b></div>
+        </div>
+      </section>
+
+      <section class="stats-row">
+        <div class="stat-card"><span class="stat-icon">♫</span><div><small>TOTAL TRACKS</small><strong id="trackCount">0</strong></div></div>
+        <div class="stat-card"><span class="stat-icon violet">◉</span><div><small>NOW PLAYING</small><strong id="nowPlayingStat">Nothing yet</strong></div></div>
+        <div class="stat-card"><span class="stat-icon orange">↔</span><div><small>DATA STRUCTURE</small><strong>Doubly linked list</strong></div></div>
+      </section>
+
+      <section class="playlist-section" id="playlist">
+        <div class="section-heading"><div><p class="eyebrow">YOUR COLLECTION</p><h2>My playlist <span id="countPill">0 tracks</span></h2></div><button class="ghost-btn" id="refreshBtn">↻ Refresh</button></div>
+        <div class="add-panel">
+          <div class="add-heading"><div class="add-symbol">＋</div><div><h3>Add a new track</h3><p>Grow your collection, one song at a time.</p></div></div>
+          <form id="addForm" class="song-form">
+            <label>SONG TITLE<input id="songTitle" name="title" placeholder="e.g. Paradise" maxlength="100" required></label>
+            <label>ARTIST NAME<input id="songArtist" name="artist" placeholder="e.g. Coldplay" maxlength="100" required></label>
+            <button class="primary-btn add-btn" type="submit">Add to playlist <span>＋</span></button>
+          </form>
+          <p id="formMessage" class="form-message" role="status"></p>
+        </div>
+
+        <div class="list-heading"><h3>All tracks</h3><div class="search-box"><span>⌕</span><input id="searchInput" placeholder="Search songs or artists..." aria-label="Search songs or artists"></div></div>
+        <div class="table-wrap"><table><thead><tr><th>#</th><th>TRACK</th><th>ARTIST</th><th>ACTION</th></tr></thead><tbody id="songRows"></tbody></table>
+          <div id="emptyState" class="empty-state"><div>♫</div><strong>Your playlist is waiting</strong><p>Add your first track using the form above.</p></div>
+        </div>
+      </section>
+      <footer>Made with <span>♥</span> using HTML, CSS, JavaScript &amp; Java</footer>
+    </main>
+  </div>
+
+  <div class="player-bar">
+    <div class="player-track"><div class="album-thumb">♫</div><div><strong id="playerTitle">Choose a song</strong><small id="playerArtist">Your playlist starts here</small></div></div>
+    <div class="player-controls"><button id="prevBtn" aria-label="Previous song" title="Previous">|◀</button><button id="playBtn" class="play-button" aria-label="Play selected song" title="Play">▶</button><button id="nextBtn" aria-label="Next song" title="Next">▶|</button></div>
+    <div class="player-status"><span class="live-dot"></span><span id="playerStatus">Ready when you are</span></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
